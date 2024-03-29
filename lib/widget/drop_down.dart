@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+/* Minha maior dificuldade foi na parte da criação do botão, foi minha primeira experiencia
+na parte de coletar informações de uma api, anteriomente as infomações no qual eu ultilizava ja eram
+pre definidas, nesse cajo como eu ja estava pegando as informações de uma api, estava dando conflito de "String duplicado"
+ou o valor era nulo e o formato String solicitava uma resposta String.
+*/
+
 Widget customDropDown(
     List<String> currencies, String? value, void Function(String?) onChange) {
   // remoção de valores duplicados
@@ -29,7 +35,11 @@ Widget customDropDown(
         );
       }).toList(),
       // estilo do botão suspenso
-      icon: Icon(Icons.arrow_drop_down, color: Colors.blue),
+      icon: Icon(
+        Icons.arrow_drop_down,
+        color: Colors.blue,
+      ),
+
       // estilo do texto selecionado
       selectedItemBuilder: (BuildContext context) {
         return uniqueItems.map<Widget>((String item) {
